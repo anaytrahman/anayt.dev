@@ -1,0 +1,79 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.app-footer {
+  position: relative;
+  background: $color-bg;
+  border-top: 1px solid $color-border;
+  padding: $space-xl 0 $space-md;
+
+  &__brand {
+    font-family: $font-heading;
+    font-weight: 800;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__tagline {
+    color: $color-text-muted;
+    font-size: 0.9rem;
+  }
+
+  &__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    a {
+      color: $color-text-muted;
+      font-size: 0.9rem;
+      transition: color $transition-fast;
+
+      &:hover {
+        color: $color-primary-light;
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: flex-start;
+
+    @include respond(md) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__bottom {
+    text-align: center;
+    color: $color-text-subtle;
+    font-size: 0.8rem;
+    margin-top: $space-lg;
+    padding-top: $space-md;
+    border-top: 1px solid $color-border;
+  }
+
+  &__to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: $gradient-primary;
+    color: #fff;
+    border: none;
+    box-shadow: $shadow-soft;
+    @include flex-center;
+    z-index: 900;
+    transition: transform $transition-fast;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+  }
+}

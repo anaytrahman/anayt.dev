@@ -1,0 +1,41 @@
+<footer class="app-footer">
+  <div class="container">
+    <div class="row gy-4 align-items-center">
+      <div class="col-12 col-md-4">
+        <div class="app-footer__brand">Anayt<span class="text-gradient">.dev</span></div>
+        <p class="app-footer__tagline">Building clean, scalable Frontend experiences.</p>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <ul class="app-footer__links">
+          <li *ngFor="let link of navLinks">
+            <a [href]="'#' + link.fragment">{{ link.label }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-4 text-md-end">
+        <div class="app-footer__socials">
+          <a
+            *ngFor="let social of socialLinks"
+            class="btn-icon-circle"
+            [href]="social.url"
+            [attr.aria-label]="social.label"
+            target="_blank"
+            rel="noopener"
+          >
+            <i [class]="social.icon"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-footer__bottom">
+      <span>&copy; {{ year }} Anaytullah Rahmani. All rights reserved.</span>
+    </div>
+  </div>
+
+  <button class="app-footer__to-top" (click)="scrollToTop()" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+</footer>

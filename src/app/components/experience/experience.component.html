@@ -1,0 +1,29 @@
+<section id="experience" class="experience-section section">
+  <div class="container">
+    <div class="text-center mb-section-title" appScrollReveal>
+      <p class="section-eyebrow">My Journey</p>
+      <h2 class="section-title">Work Experience</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline__item" *ngFor="let exp of experiences; let i = index" appScrollReveal>
+        <div class="timeline__dot"></div>
+        <div class="timeline__content surface-card">
+          <div class="timeline__top">
+            <h3 class="timeline__position">{{ exp.position }}</h3>
+            <span class="timeline__duration">{{ exp.duration }}</span>
+          </div>
+          <p class="timeline__company">{{ exp.company }} &middot; {{ exp.location }}</p>
+
+          <ul class="timeline__list">
+            <li *ngFor="let r of exp.responsibilities">{{ r }}</li>
+          </ul>
+
+          <div class="timeline__tags">
+            <span class="tag" *ngFor="let tech of exp.technologies">{{ tech }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

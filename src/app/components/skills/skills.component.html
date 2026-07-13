@@ -1,0 +1,26 @@
+<section id="skills" class="skills-section section">
+  <div class="container">
+    <div class="text-center mb-section-title" appScrollReveal>
+      <p class="section-eyebrow">What I Work With</p>
+      <h2 class="section-title">Skills &amp; Technologies</h2>
+      <p class="section-subtitle mx-auto text-center">
+        A snapshot of the tools and technologies I use to build production-grade frontend applications.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-sm-6 col-lg-4" *ngFor="let skill of skills" appScrollReveal>
+        <div class="skill-card">
+          <div class="skill-card__header">
+            <span class="skill-card__icon"><i [class]="skill.icon"></i></span>
+            <span class="skill-card__name">{{ skill.name }}</span>
+            <span class="skill-card__percent">{{ skill.level }}%</span>
+          </div>
+          <div class="skill-card__bar">
+            <div class="skill-card__bar-fill" [style.width.%]="skill.level"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

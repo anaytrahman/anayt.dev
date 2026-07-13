@@ -1,0 +1,15 @@
+<section id="achievements" class="achievements-section section" #achievementsSection>
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-6 col-lg-3" *ngFor="let item of achievements; let i = index">
+        <div class="achievement-card">
+          <div class="achievement-card__icon"><i [class]="item.icon"></i></div>
+          <div class="achievement-card__value">
+            {{ counts()[i] }}{{ item.suffix }}
+          </div>
+          <div class="achievement-card__label">{{ item.label }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.services-section {
+  background: $color-bg-alt;
+}
+
+.service-card {
+  @include card-hover;
+
+  &__title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__desc {
+    color: $color-text-muted;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+}

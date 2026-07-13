@@ -1,0 +1,35 @@
+<section id="about" class="about-section section">
+  <div class="container">
+    <div class="text-center mb-section-title" appScrollReveal>
+      <p class="section-eyebrow">Get To Know Me</p>
+      <h2 class="section-title">About Me</h2>
+    </div>
+
+    <div class="row align-items-center gy-5">
+      <div class="col-12 col-lg-5">
+        <div class="about-section__image-wrap" appScrollReveal>
+          <img src="./../../../assets/images/ar-studio.jpeg" alt="Anayt Rahman" class="about-section__image" />
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-7">
+        <p class="about-section__text" appScrollReveal>
+          I'm a frontend developer who enjoys turning complex problems into clean, intuitive
+          interfaces. Over the past 4+ years, I've specialized in Angular — building
+          scalable design systems, optimizing performance, and collaborating closely with
+          designers and backend teams to ship products people genuinely enjoy using.
+        </p>
+
+        <div class="row g-3">
+          <div class="col-12 col-sm-6" *ngFor="let item of infoItems" appScrollReveal>
+            <div class="info-card">
+              <div class="info-card__icon"><i [class]="item.icon"></i></div>
+              <div class="text-muted-custom small">{{ item.label }}</div>
+              <div class="fw-semibold">{{ item.value }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

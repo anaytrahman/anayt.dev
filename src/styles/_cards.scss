@@ -1,0 +1,25 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.surface-card {
+  @include glass-card;
+  @include card-hover;
+  padding: $space-lg;
+}
+
+.info-card {
+  @include glass-card;
+  padding: $space-md;
+  height: 100%;
+
+  .info-card__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: $radius-sm;
+    background: rgba($color-primary, 0.12);
+    color: $color-primary-light;
+    @include flex-center;
+    font-size: 1.25rem;
+    margin-bottom: $space-sm;
+  }
+}

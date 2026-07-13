@@ -1,0 +1,65 @@
+@use 'variables' as *;
+
+.btn-gradient {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: $radius-sm;
+  font-family: $font-heading;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #fff;
+  background: $gradient-primary;
+  border: none;
+  box-shadow: 0 8px 20px rgba($color-primary, 0.35);
+  transition: transform $transition-fast, box-shadow $transition-fast;
+  text-decoration: none;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba($color-primary, 0.5);
+    color: #fff;
+  }
+}
+
+.btn-outline-glow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: $radius-sm;
+  font-family: $font-heading;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: $color-text;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all $transition-fast;
+  text-decoration: none;
+
+  &:hover {
+    border-color: $color-primary;
+    color: $color-primary-light;
+    background: rgba($color-primary, 0.08);
+  }
+}
+
+.btn-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $color-border;
+  color: $color-text-muted;
+  transition: all $transition-fast;
+
+  &:hover {
+    color: #fff;
+    border-color: $color-primary;
+    background: rgba($color-primary, 0.15);
+    transform: translateY(-3px);
+  }
+}

@@ -1,0 +1,48 @@
+<section id="projects" class="projects-section section">
+  <div class="container">
+    <div class="text-center mb-section-title" appScrollReveal>
+      <p class="section-eyebrow">My Work</p>
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle mx-auto text-center">
+        A selection of projects that highlight my approach to building clean,
+        responsive, and performant applications.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let project of projects" appScrollReveal>
+        <article class="project-card">
+          <div class="project-card__image-wrap">
+            <img [src]="project.image" [alt]="project.name" class="project-card__image" />
+            <div class="project-card__overlay">
+              <a [href]="project.liveUrl" target="_blank" rel="noopener" class="btn-icon-circle" aria-label="Visit live project">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a [href]="project.githubUrl" target="_blank" rel="noopener" class="btn-icon-circle" aria-label="View on GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card__body">
+            <h3 class="project-card__title">{{ project.name }}</h3>
+            <p class="project-card__desc">{{ project.description }}</p>
+
+            <div class="project-card__tags">
+              <span class="tag" *ngFor="let tech of project.techStack">{{ tech }}</span>
+            </div>
+
+            <div class="project-card__actions">
+              <a [href]="project.liveUrl" target="_blank" rel="noopener" class="btn-outline-glow btn-sm-block">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Project
+              </a>
+              <a [href]="project.githubUrl" target="_blank" rel="noopener" class="btn-outline-glow btn-sm-block">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,67 @@
+<section id="home" class="hero-section">
+  <div class="hero-section__bg">
+    <span class="hero-blob hero-blob--one"></span>
+    <span class="hero-blob hero-blob--two"></span>
+  </div>
+
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-12 col-lg-6">
+        <p class="section-eyebrow reveal in-view">Hi, I'm</p>
+        <h1 class="hero-section__name reveal in-view">Anaytullah Rahmani</h1>
+        <h2 class="hero-section__role">
+          <span>{{ typedText() }}</span><span class="hero-section__cursor">|</span>
+        </h2>
+        <p class="hero-section__desc reveal in-view">
+          I build fast, scalable, and beautifully designed Angular, React applications with
+          4+ years of experience turning complex requirements into clean, production-ready interfaces.
+        </p>
+
+        <div class="hero-section__actions reveal in-view">
+          <a class="btn-gradient" (click)="downloadResume()" download>
+            <i class="fa-solid fa-download"></i> Download Resume
+          </a>
+          
+          <a class="btn-outline-glow" href="#projects">
+            <i class="fa-solid fa-diagram-project"></i> View Projects
+          </a>
+          <a class="btn-outline-glow" href="#contact">
+            <i class="fa-solid fa-paper-plane"></i> Contact Me
+          </a>
+        </div>
+
+        <div class="hero-section__socials reveal in-view">
+          <a
+            *ngFor="let social of socialLinks"
+            class="btn-icon-circle"
+            [href]="social.url"
+            [attr.aria-label]="social.label"
+            target="_blank"
+            rel="noopener"
+          >
+            <i [class]="social.icon"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-6">
+        <div class="hero-section__visual reveal in-view">
+          <div class="hero-section__ring float-element">
+            <img
+              src="./../../../assets/images/ar-hills.png"
+              alt="Anaytullah Rahmani profile photo"
+              class="hero-section__photo"
+            />
+            <!-- src="./../../../assets/images/ar-prof.png" -->
+          </div>
+          <span class="hero-section__badge float-element angular-badge">
+            <i class="fa-brands fa-angular"></i> Angular  <i class="fa-brands fa-react"></i> React 
+          </span>
+          <!-- <span class="hero-section__badge float-element react-badge">
+            <i class="fa-brands fa-react"></i> React 
+          </span> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

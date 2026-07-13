@@ -1,0 +1,62 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.contact-section {
+  background: $color-bg-alt;
+}
+
+.contact-info {
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: $color-text-muted;
+    margin-bottom: $space-sm;
+
+    i {
+      width: 20px;
+      color: $color-primary-light;
+    }
+  }
+
+  &__map {
+    @include flex-center;
+    gap: 0.5rem;
+    height: 140px;
+    border-radius: $radius-sm;
+    border: 1px dashed $color-border;
+    color: $color-text-subtle;
+    font-size: 0.85rem;
+  }
+}
+
+.contact-form {
+  .form-label {
+    color: $color-text-muted;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .form-control {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid $color-border;
+    color: $color-text;
+    border-radius: $radius-sm;
+    padding: 0.7rem 0.9rem;
+
+    &:focus {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: $color-primary;
+      box-shadow: 0 0 0 3px rgba($color-primary, 0.15);
+      color: $color-text;
+    }
+
+    &::placeholder {
+      color: $color-text-subtle;
+    }
+  }
+
+  .invalid-feedback {
+    color: #f87171;
+  }
+}

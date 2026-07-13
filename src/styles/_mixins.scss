@@ -1,0 +1,55 @@
+@use 'variables' as *;
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $bp-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: $bp-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: $bp-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: $bp-xl) { @content; }
+  } @else if $breakpoint == xxl {
+    @media (min-width: $bp-xxl) { @content; }
+  }
+}
+
+@mixin glass-card {
+  background: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+}
+
+@mixin card-hover {
+  transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: $shadow-soft, $shadow-glow;
+    border-color: rgba($color-primary, 0.4);
+  }
+}
+
+@mixin section-padding {
+  padding: $space-2xl 0;
+
+  @include respond(md) {
+    padding: 7rem 0;
+  }
+}
+
+@mixin gradient-text {
+  background: $gradient-primary;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}

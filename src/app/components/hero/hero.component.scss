@@ -1,0 +1,134 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 6rem;
+  overflow: hidden;
+  background: $color-bg;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: $gradient-radial-glow;
+  }
+
+  &__name {
+    font-size: 2.75rem;
+    margin-bottom: $space-xs;
+
+    @include respond(md) {
+      font-size: 3rem;
+    }
+  }
+
+  &__role {
+    @include gradient-text;
+    font-size: 1.35rem;
+    font-weight: 600;
+    min-height: 2rem;
+    margin-bottom: $space-md;
+
+    @include respond(md) {
+      font-size: 1.75rem;
+    }
+  }
+
+  &__cursor {
+    animation: typingCursor 0.9s step-end infinite;
+    color: $color-primary-light;
+    -webkit-text-fill-color: $color-primary-light;
+  }
+
+  &__desc {
+    color: $color-text-muted;
+    max-width: 560px;
+    margin-bottom: $space-lg;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-sm;
+    margin-bottom: $space-lg;
+  }
+
+  &__socials {
+    display: flex;
+    gap: $space-sm;
+  }
+
+  &__visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  &__ring {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    padding: 6px;
+    background: $gradient-primary;
+    animation: blob 10s ease-in-out infinite, floatY 6s ease-in-out infinite;
+
+    @include respond(md) {
+      width: 360px;
+      height: 360px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    background: $color-surface;
+  }
+
+  &__badge {
+    position: absolute;
+    bottom: 10%;
+    right: 4%;
+    @include glass-card;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $color-primary-light;
+  }
+  &.angular-badge {
+    bottom: 5% !important;
+    right: 4%;
+  }
+}
+
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+
+  &--one {
+    width: 380px;
+    height: 380px;
+    background: $color-primary;
+    top: -100px;
+    left: -100px;
+  }
+
+  &--two {
+    width: 320px;
+    height: 320px;
+    background: $color-secondary;
+    bottom: -80px;
+    right: -60px;
+  }
+}

@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+.section {
+  padding: $space-2xl 0;
+}
+
+.container-narrow {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mb-section-title {
+  margin-bottom: $space-xl;
+}

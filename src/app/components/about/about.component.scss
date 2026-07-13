@@ -1,0 +1,27 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.about-section {
+  background: $color-bg-alt;
+
+  &__image-wrap {
+    @include glass-card;
+    padding: $space-sm;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: $radius-sm;
+    object-fit: cover;
+    aspect-ratio: 4 / 5;
+    background: $color-surface;
+  }
+
+  &__text {
+    color: $color-text-muted;
+    margin-bottom: $space-lg;
+    font-size: 1.05rem;
+  }
+}
